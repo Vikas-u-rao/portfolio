@@ -1,5 +1,5 @@
 import { portfolioData } from "@/lib/data";
-import { Mail, ExternalLink, Code2 } from "lucide-react";
+import { Mail, ExternalLink, Code2, FileText } from "lucide-react";
 
 // Simple SVG icons
 const GithubIcon = ({ size = 24 }: { size?: number }) => (
@@ -34,6 +34,11 @@ export default function Home() {
           <a href={portfolioData.socials.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 rounded-xl transition-all font-semibold">
             <LinkedinIcon size={18} /> LinkedIn
           </a>
+          {portfolioData.resumeUrl && (
+            <a href={portfolioData.resumeUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white rounded-xl transition-all font-semibold shadow-md shadow-purple-500/20">
+              <FileText size={18} /> Resume
+            </a>
+          )}
         </div>
       </section>
 

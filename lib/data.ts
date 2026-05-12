@@ -23,6 +23,8 @@ export const portfolioData: PortfolioData = {
     { name: "Gradio" },
     { name: "Git" },
     { name: "GitHub" },
+    { name: "Bitbucket" },
+    { name: "Jira" },
     { name: "Google Cloud Platform" }
   ],
   projects: [
