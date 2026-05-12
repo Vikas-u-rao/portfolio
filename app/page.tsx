@@ -52,17 +52,19 @@ export default function Home() {
           {portfolioData.experience.map((exp, idx) => (
             <div key={idx} className="relative pl-8 border-l-2 border-blue-500/20 dark:border-blue-500/30">
               <div className="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-1.5 shadow-[0_0_12px_rgba(59,130,246,0.6)]"></div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{exp.role}</h3>
-              <p className="text-blue-600 dark:text-blue-400 font-semibold mt-1">{exp.company}</p>
-              <p className="text-sm text-gray-500 font-medium mb-4">{exp.period}</p>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-                {exp.bulletPoints.map((point, i) => (
-                  <li key={i} className="flex gap-3">
-                    <span className="text-blue-500/60 mt-1">•</span>
-                    <span className="leading-relaxed">{point}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="hover:bg-blue-50/50 dark:hover:bg-blue-900/20 p-5 -mt-4 -ml-4 rounded-2xl transition-all duration-300 border border-transparent hover:border-blue-100 dark:hover:border-blue-800/50">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{exp.role}</h3>
+                <p className="text-blue-600 dark:text-blue-400 font-semibold mt-1">{exp.company}</p>
+                <p className="text-sm text-gray-500 font-medium mb-4">{exp.period}</p>
+                <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                  {exp.bulletPoints.map((point, i) => (
+                    <li key={i} className="flex gap-3">
+                      <span className="text-blue-500/60 mt-1">•</span>
+                      <span className="leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
@@ -76,7 +78,7 @@ export default function Home() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {portfolioData.projects.map((project) => (
-            <div key={project.id} className="group relative flex flex-col justify-between p-7 rounded-3xl bg-white dark:bg-gray-900/40 border border-gray-200 dark:border-gray-800/60 shadow-sm hover:shadow-2xl hover:shadow-blue-500/5 hover:-translate-y-1.5 transition-all duration-300">
+            <div key={project.id} className="group relative flex flex-col justify-between p-7 rounded-3xl bg-white dark:bg-gray-900/40 border border-gray-200 dark:border-gray-800/60 shadow-sm hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1.5 hover:border-purple-300 dark:hover:border-purple-700/50 hover:bg-purple-50/30 dark:hover:bg-purple-900/20 transition-all duration-300">
               <div>
                 <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">

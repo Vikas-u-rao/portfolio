@@ -291,50 +291,36 @@ export function TerminalInput() {
         <div className="flex items-center">
           <span className="text-gray-500 mr-2 whitespace-nowrap">PS C:\Users\vikas&gt;</span>
           <span className="text-gray-900 dark:text-gray-100">{currentTypingCmd}</span>
-          <span className="w-2 h-5 bg-gray-900 dark:bg-gray-100 inline-block ml-1 animate-pulse"></span>
+          <span className="text-gray-900 dark:text-gray-100 font-bold animate-[pulse_1s_step-end_infinite] ml-0.5">_</span>
         </div>
       ) : (
         <form
           onSubmit={handleCommand}
-          className="flex items-center cursor-text"
+          className="flex items-center cursor-text relative"
           onClick={() => inputRef.current?.focus()}
         >
           <span className="text-gray-500 mr-2 whitespace-nowrap">
             {gameState.active ? "guess>" : "PS C:\\Users\\vikas>"}
           </span>
-          <input
-            ref={inputRef}
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            style={{
-              background: "transparent",
-              border: "none",
-              outline: "none",
-              boxShadow: "none",
-              padding: 0,
-              margin: 0,
-              width: "100%",
-              color: "inherit",
-              font: "inherit",
-              WebkitAppearance: "none",
-            }}
-            autoComplete="off"
-            spellCheck={false}
-            autoFocus
-          />
+          <div className="relative flex-1 min-w-0 flex items-center h-full">
+            <div className="absolute inset-0 pointer-events-none flex items-center whitespace-pre overflow-hidden">
+              <span className="text-gray-900 dark:text-gray-100">{input}</span>
+              <span className="text-gray-900 dark:text-gray-100 animate-[pulse_1s_step-end_infinite] font-bold">_</span>
+            </div>
+            <input
+              ref={inputRef}
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              className="w-full bg-transparent text-transparent border-none outline-none focus:ring-0 p-0 m-0"
+              style={{ caretColor: "transparent" }}
+              autoComplete="off"
+              spellCheck={false}
+              autoFocus
+            />
+          </div>
         </form>
       )}
-      
-      {/* Blinking cursor effect for PowerShell vibe */}
-      <style dangerouslySetInnerHTML={{__html: `
-        input:focus {
-          caret-color: transparent;
-        }
-        input:focus + .cursor {
-          display: inline-block;
-        }
-      `}} />
     </div>
   );
 }

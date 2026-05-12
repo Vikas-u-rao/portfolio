@@ -1,20 +1,25 @@
-# Vikas U Rao - Terminal Portfolio
+# Vikas U Rao - Dual-Mode Portfolio
 
-Hey there! I'm Vikas U Rao, an MCA student and Software Engineer. This is my personal web portfolio, designed to look and feel exactly like a fully functional Windows PowerShell terminal.
+Hey there! I'm Vikas U Rao, an MCA student and Software Engineer. This is my personal web portfolio, designed with a unique "Dual-Mode" interface to give you the best of both worlds.
 
-If you love the command line, you'll feel right at home here. I built this project to creatively showcase my skills in Python, backend development, NLP, and LLM integrations.
+I built this project to showcase my skills in Python, backend development, NLP, and LLM integrations.
 
-## What's Inside
+## Two Ways to Explore
 
-- **Authentic Terminal Experience**: Type commands like `about`, `experience`, `projects`, and `skills` to learn more about me.
-- **Boot Sequence**: A realistic PowerShell boot animation when you first load the site.
-- **Interactive Minigame**: Type `guess` to play a built-in number guessing game!
-- **Modern Tech Stack**: Built from scratch using **Next.js**, **TypeScript**, and **Tailwind CSS**.
-- **Theming**: Full support for light and dark modes via `next-themes`.
+- **Premium Visual UI (Default)**: A stunning, modern, fully responsive web design with glassmorphism effects, gradient text, and colorful hover highlights. Perfect for quickly scanning my experience, projects, and skills.
+- **Authentic Terminal Mode**: If you love the command line, hit the "Terminal Mode" button! You'll be dropped into a fully functional Windows PowerShell terminal. Type commands like `about`, `experience`, `projects`, and `skills` to interact with my data. There's even a `guess` command to play a built-in number guessing game!
+
+## Tech Stack
+
+- **Next.js (App Router)**
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Lucide Icons**
+- **next-themes** (Full Light/Dark mode support)
 
 ## Getting Started Locally
 
-Want to run this terminal on your own machine? It's simple:
+Want to run this dual-portfolio on your own machine? It's simple:
 
 1. Install dependencies:
    ```bash
