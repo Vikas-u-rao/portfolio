@@ -291,7 +291,7 @@ export function TerminalInput() {
         <div className="flex items-center">
           <span className="text-gray-500 mr-2 whitespace-nowrap">PS C:\Users\vikas&gt;</span>
           <span className="text-gray-900 dark:text-gray-100">{currentTypingCmd}</span>
-          <span className="text-gray-900 dark:text-gray-100 font-bold animate-pulse ml-0.5">_</span>
+          <span className="text-gray-900 dark:text-gray-100 font-bold animate-terminal-blink ml-0.5">_</span>
         </div>
       ) : (
         <form
@@ -302,18 +302,17 @@ export function TerminalInput() {
           <span className="text-gray-500 mr-2 whitespace-nowrap">
             {gameState.active ? "guess>" : "PS C:\\Users\\vikas>"}
           </span>
-          <div className="relative flex-1 min-w-0 flex items-center h-full">
-            <div className="absolute inset-0 pointer-events-none flex items-center whitespace-pre overflow-hidden">
-              <span className="text-gray-900 dark:text-gray-100">{input}</span>
-              <span className="text-gray-900 dark:text-gray-100 animate-pulse font-bold">_</span>
+          <div className="relative flex-1 flex items-center min-h-[24px]">
+            <div className="flex items-center pointer-events-none">
+              <span className="text-gray-900 dark:text-gray-100 whitespace-pre">{input}</span>
+              <span className="text-gray-900 dark:text-gray-100 animate-terminal-blink font-bold ml-[1px]">_</span>
             </div>
             <input
               ref={inputRef}
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="w-full bg-transparent text-transparent border-none outline-none focus:ring-0 p-0 m-0"
-              style={{ caretColor: "transparent" }}
+              className="absolute inset-0 opacity-0 w-full h-full cursor-text"
               autoComplete="off"
               spellCheck={false}
               autoFocus

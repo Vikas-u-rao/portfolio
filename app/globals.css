@@ -7,7 +7,7 @@ html {
 }
 
 /* GPU-accelerated terminal cursor blink */
-.animate-pulse {
+.animate-terminal-blink {
   animation: terminal-blink 1s step-end infinite;
   will-change: opacity;
 }
