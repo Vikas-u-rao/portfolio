@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { ModeSwitcher } from "@/components/ModeSwitcher";
 
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
@@ -22,7 +24,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "Vikas U Rao — Portfolio",
-  description: "Terminal portfolio of Vikas U Rao. Software Engineer specializing in Python, REST APIs, backend architectures, and LLM integrations.",
+  description: "Portfolio of Vikas U Rao. Software Engineer specializing in Python, REST APIs, backend architectures, and LLM integrations.",
   metadataBase: new URL("https://vikasurao.dev"),
   openGraph: {
     title: "Vikas U Rao — Portfolio",
@@ -41,17 +43,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jetbrainsMono.variable} antialiased`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} antialiased`} suppressHydrationWarning>
       <head>
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="bg-gray-50 dark:bg-black text-gray-800 dark:text-gray-300 font-mono min-h-screen p-4 md:p-8">
+      <body className="bg-gray-50 dark:bg-black text-gray-900 dark:text-gray-100 min-h-screen flex flex-col font-sans transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          <div className="max-w-4xl mx-auto flex justify-end mb-4">
+          <div className="max-w-4xl w-full mx-auto flex justify-end p-4 md:p-8 pb-0">
+            <ModeSwitcher />
             <ThemeToggle />
           </div>
-          {children}
+          <main className="flex-grow p-4 md:px-8">
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>
