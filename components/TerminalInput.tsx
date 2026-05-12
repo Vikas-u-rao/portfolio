@@ -188,9 +188,9 @@ export function TerminalInput() {
       const commands = [
         "Get-Content about.txt",
         "Get-ChildItem ./experience",
+        "contact --info",
         "Get-ChildItem ./projects",
         "Get-Content skills.json",
-        "contact --info",
         "help"
       ];
 
