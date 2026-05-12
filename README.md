@@ -27,15 +27,3 @@ Want to run this terminal on your own machine? It's simple:
    ```
 
 3. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## How to Deploy on Vercel
-
-Vercel is the easiest way to deploy a Next.js application. Here is exactly how you can put this live:
-
-1. Go to [Vercel.com](https://vercel.com/) and create a free account by logging in with your GitHub account.
-2. From your Vercel dashboard, click the **Add New...** button and select **Project**.
-3. You will see a list of your GitHub repositories. Find the `portfolio` repository and click **Import**.
-4. You don't need to change any settings! Vercel automatically detects that it's a Next.js project and sets up the correct build commands.
-5. Simply click **Deploy**.
-
-Within a couple of minutes, Vercel will generate a live URL for your portfolio. The best part? Every time you run `git push origin main`, Vercel will automatically detect the changes and update your live website instantly!
