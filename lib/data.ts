@@ -6,6 +6,7 @@ export const portfolioData: PortfolioData = {
   terminalTagline: "Software Engineer | Python, JavaScript, Java",
   about: "I am an MCA student at Bangalore Institute of Technology and a Software Engineer. I specialize in Python, REST API development, backend architectures, automation pipelines, and integrating LLMs for data extraction and anonymization.",
   email: "vikasurao2004@gmail.com",
+  resumeUrl: "/resume.pdf",
   socials: {
     github: "https://github.com/Vikas-u-rao",
     linkedin: "https://linkedin.com/in/vikas-u-rao"
@@ -107,3 +108,4 @@ export const portfolioData: PortfolioData = {
     }
   ]
 };
+

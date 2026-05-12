@@ -33,6 +33,7 @@ export interface PortfolioData {
   terminalTagline: string;        // alternate tagline for Lo-Fi mode
   about: string;
   email: string;
+  resumeUrl?: string;
   socials: { github: string; linkedin: string; twitter?: string };
   projects: Project[];
   experience: Experience[];
