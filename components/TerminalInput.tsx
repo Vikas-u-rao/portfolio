@@ -291,7 +291,7 @@ export function TerminalInput() {
         <div className="flex items-center">
           <span className="text-gray-500 mr-2 whitespace-nowrap">PS C:\Users\vikas&gt;</span>
           <span className="text-gray-900 dark:text-gray-100">{currentTypingCmd}</span>
-          <span className="text-gray-900 dark:text-gray-100 font-bold animate-[pulse_1s_step-end_infinite] ml-0.5">_</span>
+          <span className="text-gray-900 dark:text-gray-100 font-bold animate-pulse ml-0.5">_</span>
         </div>
       ) : (
         <form
@@ -305,7 +305,7 @@ export function TerminalInput() {
           <div className="relative flex-1 min-w-0 flex items-center h-full">
             <div className="absolute inset-0 pointer-events-none flex items-center whitespace-pre overflow-hidden">
               <span className="text-gray-900 dark:text-gray-100">{input}</span>
-              <span className="text-gray-900 dark:text-gray-100 animate-[pulse_1s_step-end_infinite] font-bold">_</span>
+              <span className="text-gray-900 dark:text-gray-100 animate-pulse font-bold">_</span>
             </div>
             <input
               ref={inputRef}
