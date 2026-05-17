@@ -36,7 +36,7 @@ export function TerminalInput() {
       
       if (guess === gameState.targetNumber) {
         setGameState({ active: false, targetNumber: 0, attempts: 0 });
-        return <div className="text-green-400 font-bold">🎉 Correct! You guessed it in {newAttempts} attempts! Type <span className="text-blue-400">help</span> to continue.</div>;
+        return <div className="text-green-400 font-bold">Correct! You guessed it in {newAttempts} attempts! Type <span className="text-blue-400">help</span> to continue.</div>;
       } else if (guess < gameState.targetNumber) {
         setGameState(prev => ({ ...prev, attempts: newAttempts }));
         return <div>Too low! Try again...</div>;
@@ -74,7 +74,7 @@ export function TerminalInput() {
         setGameState({ active: true, targetNumber: newTarget, attempts: 0 });
         return (
           <div className="mt-2 p-4 border border-green-500/30 bg-green-500/10 rounded">
-            <div className="font-bold text-green-400 text-lg mb-2">🎮 NUMBER GUESSING GAME 🎮</div>
+            <div className="font-bold text-green-400 text-lg mb-2">NUMBER GUESSING GAME</div>
             <p>I have thought of a number between <span className="font-bold text-white">1 and 100</span>.</p>
             <p className="text-gray-400 mt-1">Type your guess below, or type &apos;quit&apos; to exit.</p>
           </div>
