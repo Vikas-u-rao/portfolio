@@ -55,6 +55,7 @@ export function TerminalInput() {
             <div className="flex flex-wrap gap-x-4 gap-y-1">
               <span className="text-blue-600 dark:text-blue-400">about</span>
               <span className="text-blue-600 dark:text-blue-400">experience</span>
+              <span className="text-blue-600 dark:text-blue-400">education</span>
               <span className="text-blue-600 dark:text-blue-400">projects</span>
               <span className="text-blue-600 dark:text-blue-400">skills</span>
               <span className="text-blue-600 dark:text-blue-400">contact</span>
@@ -93,12 +94,27 @@ export function TerminalInput() {
             {portfolioData.experience.map((exp, idx) => (
               <div key={idx}>
                 <div className="font-bold text-gray-900 dark:text-gray-200">{exp.role} @ {exp.company}</div>
-                <div className="text-gray-500 text-sm mb-1">{exp.period}</div>
+                <div className="text-gray-500 text-sm mb-1">{exp.period}{exp.location ? ` | ${exp.location}` : ""}</div>
                 <ul className="list-disc list-inside text-gray-600 dark:text-gray-400">
                   {exp.bulletPoints.map((point, i) => (
                     <li key={i}>{point}</li>
                   ))}
                 </ul>
+              </div>
+            ))}
+          </div>
+        );
+      case "education":
+      case "Get-Content education.txt":
+      case "cat education.txt":
+      case "type education.txt":
+        return (
+          <div className="space-y-3 mt-2">
+            {portfolioData.education?.map((edu, idx) => (
+              <div key={idx}>
+                <div className="font-bold text-gray-900 dark:text-gray-200">{edu.degree}</div>
+                <div className="text-gray-600 dark:text-gray-400">{edu.institution}{edu.location ? ` — ${edu.location}` : ""}</div>
+                <div className="text-gray-500 text-sm">{edu.period}{edu.gpa ? ` | ${edu.gpa}` : ""}</div>
               </div>
             ))}
           </div>
@@ -150,6 +166,9 @@ export function TerminalInput() {
         return (
           <ul className="mt-2 space-y-1">
             <li><span className="text-gray-500 w-24 inline-block">Email:</span> <a href={`mailto:${portfolioData.email}`} className="text-blue-600 dark:text-blue-400 hover:underline">{portfolioData.email}</a></li>
+            {portfolioData.phone && (
+              <li><span className="text-gray-500 w-24 inline-block">Phone:</span> <a href={`tel:${portfolioData.phone}`} className="text-blue-600 dark:text-blue-400 hover:underline">{portfolioData.phone}</a></li>
+            )}
             {portfolioData.socials.github && (
               <li><span className="text-gray-500 w-24 inline-block">GitHub:</span> <a href={portfolioData.socials.github} target="_blank" rel="noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">{portfolioData.socials.github}</a></li>
             )}

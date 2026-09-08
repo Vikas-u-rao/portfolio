@@ -23,8 +23,22 @@ export interface Experience {
   company: string;
   role: string;
   period: string;
+  location?: string;
   bulletPoints: string[];
   techUsed: TechItem[];
+}
+
+export interface Education {
+  institution: string;
+  degree: string;
+  period: string;
+  location?: string;
+  gpa?: string;
+}
+
+export interface SkillCategory {
+  category: string;
+  items: string[];
 }
 
 export interface PortfolioData {
@@ -33,9 +47,12 @@ export interface PortfolioData {
   terminalTagline: string;        // alternate tagline for Lo-Fi mode
   about: string;
   email: string;
+  phone?: string;
   resumeUrl?: string;
   socials: { github: string; linkedin: string; twitter?: string };
   projects: Project[];
   experience: Experience[];
   skills: TechItem[];
+  skillCategories?: SkillCategory[];
+  education?: Education[];
 }
